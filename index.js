@@ -21,6 +21,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+app.get('/', (req, res) => {
+    res.send('Hello from Mamafua API!');
+})
 app.use('/user', UserRoutes);
 
 app.listen(PORT, () => {
@@ -28,4 +31,5 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 })
 
+module.exports = app;
 
